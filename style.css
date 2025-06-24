@@ -62,6 +62,7 @@ QLabel#orange {
 }
 
 QGroupBox {
+    color: #e95420;
     background-color: white;
     border: 1px solid #52616B;
     border-radius: 5px;
@@ -378,10 +379,6 @@ QWidget {
 /********************************* Main UI settings ***************************************/
 
 /********************************* Buttons UI QPushButton settings ***************************************/
-QPushButton {
-    color: "#F0F5F9";
-}
-
 QPushButton {
     font-size: 16px;
     color: "#F0F5F9";
