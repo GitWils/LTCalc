@@ -14,9 +14,10 @@ class MainWindow(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Розрахунок температури рідини при змішуванні")
-        self.setMinimumSize(600, 380)
+        self.setMinimumSize(600, 300)
         self.centerWindow()
         self._initUI()
+        self.setWindowFlag(Qt.WindowType.WindowMaximizeButtonHint, on=False)
 
     def _initUI(self):
         """ user interface initializing"""
@@ -41,6 +42,7 @@ class MainWindow(QtWidgets.QWidget):
         self.setLayout(main_layout)
 
     def calcResult(self):
+        """ showing result calculations """
         calc = LiquidCalc(self._volume1.getVolume(), self._volume1.getTemperature(),
                           self._volume2.getVolume(), self._volume2.getTemperature())
         self.resultLbl.setText(f"{calc.getResultVolume():.1f} л температурою {calc.getResultTemperature():.1f} °C")

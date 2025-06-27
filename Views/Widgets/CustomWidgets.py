@@ -1,15 +1,8 @@
-from typing import Callable
-
 from PyQt6 import QtWidgets
 from PyQt6.QtCore import Qt
 
-class EditComboBox(QtWidgets.QComboBox):
-    def __init__(self) -> None:
-        super().__init__()
-        self.setEditable(True)
-
 class IntSpinBox(QtWidgets.QSpinBox):
-    """ spinbox widget for int numbers """
+    """ Spinbox widget for int numbers """
     def __init__(self, readonly=False, changedFunc=None) -> None:
         super().__init__()
         self.setValue(0)
@@ -19,7 +12,7 @@ class IntSpinBox(QtWidgets.QSpinBox):
         self.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
 class FloatSpinBox(QtWidgets.QDoubleSpinBox):
-    """ spinbox widget for float numbers """
+    """ Spinbox widget for float numbers """
     def __init__(self, readonly=False, changedFunc=None):
         super().__init__()
         self.setValue(1)
@@ -42,7 +35,7 @@ class Note(QtWidgets.QTextEdit):
         self.setMaximumHeight(100)
 
 class VolumeGroup(QtWidgets.QGroupBox):
-    """ QGroupBox widget with volume and temperature edit boxes"""
+    """ QGroupBox widget with volume and temperature edit boxes """
     def __init__(self, title=''):
         super().__init__()
         self.setTitle(title)
@@ -62,12 +55,15 @@ class VolumeGroup(QtWidgets.QGroupBox):
         volume_layout.setHorizontalSpacing(100)
 
     def getVolume(self):
+        """ returns volume value from spinbox """
         return self._editV.value()
 
     def getTemperature(self):
+        """ returns temperature value from spinbox """
         return self._editT.value()
 
 class ResultGroup(QtWidgets.QGroupBox):
+    """ QGroupBox widget for result values showing """
     def __init__(self, title='') -> None:
         super().__init__()
         self.setTitle(title)
