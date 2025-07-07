@@ -67,7 +67,7 @@ class MainWindow(QtWidgets.QWidget):
 def main():
     """ start program function """
     app = QtWidgets.QApplication(sys.argv)
-    with open("style.css", "r") as file:
+    with open("./style.css", "r") as file:
         app.setStyleSheet(file.read())
     window = MainWindow()
     window.show()
